@@ -10,6 +10,34 @@
             margin: 0;
             padding: 0;
         }
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 60vh repeat(4, auto);
+        }
+        header {
+            position: relative;
+        }
+        header > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        header > .header-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        header > .header-body > .header-body-content {
+            height: 80%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            align-content: center;
+            justify-items: end;
+        }
         article {
             margin: 0;
             padding: 1rem;
@@ -40,6 +68,10 @@
             justify-content: center;
         }
         @media (min-width: 768px) {
+            header > .header-body > .header-body-content {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
             article {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: auto repeat(2, minmax(auto, 250px));
@@ -52,17 +84,51 @@
 </head>
 <body>
     <header class="header">
-        <nav class="container">
-            <h1>PERUANKS MAT</h1>
-        </nav>
+        <img src="https://picsum.photos/id/500/1000/1000" class="" alt="imagen">
+        <div class="header-body">
+            <nav class="container text-center">
+                <h1>PERUANKS MAT</h1>
+            </nav>
+            <div class="header-body-content container">
+                <div>
+                    <h2>titulo de descripcion</h2>
+                    <p>DELICIOSO SABOR ANDINO 50 años compartiendo con orgullo tradiciones andinas en las mesas de las familias peruanas.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button>PRIMER BOTON</button>
+                    <button>SEGUNDO BOTON</button>
+                    <button>TERCERO BOTON</button>
+                </div>
+            </div>
+        </div>
     </header>
-    <section class="bg-success">
+    <section class="bg-success py-4">
         <div class="container">
-            <span>anuncio</span>
+            <h2>PEDIR DELIVERY</h2>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <span>anuncio</span>
+                </div>
+            </div>
         </div>
     </section>
-    <main class="bg-primary">
-        <section class="container">
+    <main class="py-4">
+        <section class="container py-2">
             <article class="bg-warning">
                 <div class="article-title text-center">
                     <h2>NUESTROS LOCALES Y RESERVAS Agenda tu próxima visita</h2>
@@ -93,7 +159,7 @@
                 </div>
             </article>
         </section>
-        <section class="container">
+        <section class="container py-2">
             <article class="bg-warning">
                 <div class="article-title text-center">
                     <h2>Te presentamos NUESTRA CARTA</h2>
@@ -125,7 +191,7 @@
             </article>
         </section>
     </main>
-    <footer class="bg-info footer">
+    <footer class="text-bg-dark footer py-5">
         <div class="container">
             <div class="row">
                 <div class="col">
