@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90vh repeat(4, auto);
+}
+header {
+    position: relative;
+}
+header > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header > .header-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+header > .header-body > .header-body-content {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+article {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(4, minmax(auto, 250px));
+    grid-gap: 1rem;
+}
+article > .article-title > h2 {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+article > .article-title > h2 > span {
+    font-style: italic;
+    font-weight: lighter;
+}
+article > .article-card {
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+article > .article-card > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+}
+article > .article-card > .article-card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delivery-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.delivery-card-tag {
+    background: rgba(0, 0, 0, 0.51);
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+.circle {
+    opacity: .8;
+    filter: blur(5rem);
+}
+@media (min-width: 768px) {
+    body {
+        grid-template-rows: 60vh repeat(4, auto);
+    }
+    header > .header-body > .header-body-content {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        justify-items: end;
+    }
+    article {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto repeat(2, minmax(auto, 250px));
+    }
+    article > .article-title {
+        grid-column: span 2;
+    }
+}
