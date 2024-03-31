@@ -1,6 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
+.container {
+    padding: 0 !important;
 }
 body {
     display: grid;
@@ -105,9 +104,9 @@ li {
     overflow-y: hidden;
 }
 .preloader img {
-    animation: pulso 0.5s infinite alternate;
+    animation: pulse 0.5s infinite alternate;
 }
-@keyframes pulso {
+@keyframes pulse {
     from {
         transform: scale(1);
     }
@@ -117,7 +116,7 @@ li {
 }
 @media (min-width: 768px) {
     body {
-        grid-template-rows: 60vh repeat(4, auto);
+        grid-template-rows: 90vh repeat(4, auto);
     }
     header > .header-body > .header-body-content {
         grid-template-columns: repeat(2, 1fr);
