@@ -92,6 +92,29 @@ li {
     opacity: .8;
     filter: blur(5rem);
 }
+/* PRELOADER */
+.loaded .preloader {
+    display: none;
+}
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+.preloader img {
+    animation: pulso 0.5s infinite alternate;
+}
+@keyframes pulso {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
 @media (min-width: 768px) {
     body {
         grid-template-rows: 60vh repeat(4, auto);
